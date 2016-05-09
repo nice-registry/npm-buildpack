@@ -13,5 +13,5 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 
-echo "" >> $BUILD_DIR/.netrc
-echo "machine github.com login $GITHUB_AUTH_TOKEN password x-oauth-basic" >> $BUILD_DIR/.netrc
+echo "" >> $BUILD_DIR/.npmrc
+echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" >> $BUILD_DIR/.npmrc
