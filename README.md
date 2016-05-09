@@ -5,7 +5,9 @@ within a Heroku dyno.
 
 It detects an `NPM_AUTH_TOKEN` environment variable and creates a `.npmrc` file.
 
-It is the soul sister of the [GitHub Buildpack](https://github.com/zeke/github-buildpack)
+It is the soul sister of the [GitHub Buildpack](https://github.com/zeke/github-buildpack).
+
+See the blog post: [npm and GitHub automation with Heroku](http://zeke.sikelianos.com/npm-and-github-automation-with-heroku)
 
 ## Usage
 
