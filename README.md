@@ -40,3 +40,22 @@ cat .npmrc
 
 Now you can perform authenticated npm operations on the dyno, including
 `npm publish`!
+
+## Tips
+
+Tip: If you ever change the token, you'll need to redeploy the app to
+ensure a new .netrc file is created:
+
+```sh
+heroku config:set GITHUB_AUTH_TOKEN=NEW_TOKEN
+git commit --allow-empty -m "update dat npm token"
+git push heroku master
+```
+
+Tip: Heroku's node buildpack will install `dependencies` from package.json
+by default. If your app needs `devDependencies` to be installed too,
+set the following in your app environment:
+
+```sh
+heroku config:set NPM_CONFIG_PRODUCTION=false
+```
