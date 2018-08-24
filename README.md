@@ -26,7 +26,7 @@ heroku config:set GITHUB_AUTH_TOKEN=YOUR_TOKEN_HERE
 Configure your app to use this buildpack:
 
 ```sh
-heroku buildpacks:add --index 1 https://github.com/zeke/npm-buildpack
+heroku buildpacks:add --index 1 zeke/npm
 ```
 
 The next time you push your app to Heroku, this buildpack will create a
@@ -58,4 +58,12 @@ set the following in your app environment:
 
 ```sh
 heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
+## Using the latest source code
+
+The `zeke/npm` buildpack from the [Heroku Buildpack Registry](https://devcenter.heroku.com/articles/buildpack-registry) represents the latest stable version of the buildpack. If you'd like to use the source code from this Github repository, you can set your buildpack to the Github URL:
+
+```sh-session
+$ heroku buildpacks:set https://github.com/nice-registry/npm-buildpack
 ```
